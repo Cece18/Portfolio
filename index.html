@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlene's Portfolio</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+
+
+    <!-- Top Bar -->
+
+    <div class="top-bar">
+        <div class="left">
+            <span>Charlene</span>
+            <a href="https://github.com/Cece18" target="_blank"> <span>Github</span> </a>
+            <a href="https://www.linkedin.com/in/charlene-noye-a48b24265/" target="_blank"><span>Linkedin</span></a>
+            <a href="mailto:noyecharlene@gmail.com">Email Me</a>
+        </div>
+        <div class="right">
+            <span id="time"></span>
+            <img src="images/full-battery.png" alt="Battery Icon" class="battery-icon">
+        </div>
+    </div>
+
+    <!-- Main Desktop -->
+
+
+    <div class="desktop" ondblclick="clearHighlight()">
+        <div class="icon" onclick="highlightFolder(this)" ondblclick="openWindow('skills')">
+            <img src="images/music.png" alt="Experience Icon">
+            <p>Skills</p>
+        </div>
+        <div class="icon" onclick="highlightFolder(this)" ondblclick="openWindow('experience')">
+            <img src="images/image.png" alt="Experience Icon">
+            <p>Experience</p>
+        </div>
+        <div class="icon"  onclick="highlightFolder(this)" ondblclick="openWindow('education')">
+            <img src="images/folder.png" alt="Education Icon">
+            <p>Education</p>
+        </div>
+        <div class="icon"  onclick="highlightFolder(this)" ondblclick="openWindow('project')">
+            <img src="images/favourite.png" alt="GitHub Icon">
+            <p>Projects</p>
+        </div>
+
+        <div class="icon"  onclick="highlightFolder(this)" ondblclick="openWindow('resume')">
+            <img src="images/file.png" alt="Resume Icon">
+            <p>Resume.pdf</p>
+        </div>
+    </div>
+
+    <div class="about-me-widget">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Charlene's Logo" class="logo">
+        </div>
+        <h2>Hi, It's Me</h2>
+        <h3><span class="multiple-text"></span></h3>
+        <p>
+            Hi, I'm Charlene, a software engineer from London, UK. I'm passionate about backend development and building high-impact projects. 
+        </p>
+        <p>
+            I enjoy solving challenging problems, learning new technologies, and sharing knowledge with others.
+        </p>
+    </div>
+    
+    
+
+    <!-- Bottom Bar -->
+
+
+    <div class="bottom-bar">
+        <div class="home-button" onclick="toggleMenu()">
+            <img src="images/power.png" alt="Home Icon">
+        </div>
+        <div class="menu" id="menu">
+            <ul>
+                <li onclick="restart()">Restart</li>
+                <li onclick="shutdown()">Shut Down</li>
+                <li onclick="sleep()">Sleep</li>
+            </ul>
+        </div>
+        <div class="open-apps" id="open-apps"></div>
+    </div>
+
+
+    <!-- Opening Window-->
+
+    <div class="window" id="skills-window">
+        <div class="window-bar">
+            <div class="buttons">
+                <div class="button close" onclick="closeWindow('skills')"></div>
+                <div class="button minimize" onclick="minimizeWindow('skills-window')"></div>
+                <div class="button maximize" onclick="maximizeWindow('skills-window')"></div>
+                
+            </div>
+        </div>
+        <iframe src="skills.html" class="window-content"></iframe>
+    </div>
+    <div class="window" id="experience-window">
+        <div class="window-bar">
+            <div class="buttons">
+                <div class="button close" onclick="closeWindow('experience')"></div>
+                <div class="button minimize" onclick="minimizeWindow('experience-window')"></div>
+                <div class="button maximize" onclick="maximizeWindow('experience-window')"></div>
+                
+            </div>
+        </div>
+        <iframe src="experience.html" class="window-content"></iframe>
+    </div>
+
+    <div class="window" id="github-window">
+        <div class="window-bar">
+            <div class="buttons">
+                <div class="button close" onclick="closeWindow('github')"></div>
+                <div class="button minimize" onclick="minimizeWindow('github-window')"></div>
+                <div class="button maximize" onclick="maximizeWindow('github-window')"></div>
+            </div>
+        </div>
+        <iframe src="github.html" class="window-content"></iframe>
+    </div>
+    
+    <div class="window" id="education-window">
+        <div class="window-bar">
+            <div class="buttons">
+                <div class="button close" onclick="closeWindow('education')"></div>
+                <div class="button minimize" onclick="minimizeWindow('education-window')"></div>
+                <div class="button maximize" onclick="maximizeWindow('education-window')"></div>
+            </div>
+        </div>
+        <iframe src="education.html" class="window-content"></iframe>
+    </div>
+
+    <div class="window" id="project-window">
+        <div class="window-bar">
+            <div class="buttons">
+                <div class="button close" onclick="closeWindow('project')"></div>
+                <div class="button minimize" onclick="minimizeWindow('project-window')"></div>
+                <div class="button maximize" onclick="maximizeWindow('project-window')"></div>
+            </div>
+        </div>
+        <iframe src="project.html" class="window-content"></iframe>
+    </div>
+    <div class="window" id="resume-window">
+        <div class="window-bar">
+            <div class="buttons">
+                <div class="button close" onclick="closeWindow('resume')"></div>
+                <div class="button minimize" onclick="minimizeWindow('resume-window')"></div>
+                <div class="button maximize" onclick="maximizeWindow('resume-window')"></div>
+            </div>
+        </div>
+        <div class="download-button-container">
+        <a href="documents/resume.pdf" download class="download-button">Download Resume</a>
+    </div>
+    <iframe src="documents/resume.pdf#zoom=150" class="window-content" style="width: 100%; height: calc(100% - 40px); overflow-y: scroll;"></iframe>
+    </div>
+
+    <script src="js/scripts.js"></script> <!-- Main logic for opening folders -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="js/text.js"></script>
+</body>
+</html>
