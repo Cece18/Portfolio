@@ -213,13 +213,13 @@ body::before {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: rgba(255, 255, 255, 0.6); /* Increased transparency */
+        background-color: rgba(255, 255, 255, 0.6);
         border: 3px solid #5167b1;
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         z-index: 20;
         overflow: hidden;
-        backdrop-filter: blur(2px); /* Adds slight blur to content behind the window */
+        padding: 0;
     }
 
 /* Add a new class for when window is visible */
@@ -229,14 +229,17 @@ body::before {
 }
 
 .window-bar {
-    background-color: #5167b1; /* Soft dark blue */
+    background-color: #5167b1;
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
-    border-radius: 7px 7px 0 0; /* Slightly adjusted to account for border */
+    border-radius: 6px 6px 0 0; /* Slightly smaller than window border-radius */
     flex-shrink: 0;
+    position: relative; /* Add this */
+    margin: -3px -3px 0 -3px; /* Match the border width */
+    width: calc(100% + 6px); /* Account for negative margins */
 }
 
 /* Optional: Add a subtle gradient to the window bar for more depth */
@@ -438,45 +441,36 @@ body::before {
 /* Resume Window */
 
 #resume-window {
-    display: none;
-    position: absolute;
-    width: 80%; /* Occupies 80% of the screen width */
-    height: 90%; /* Occupies 90% of the screen height */
-    top: 5%; /* Centers vertically */
-    left: 10%; /* Centers horizontally */
-    transform: none; /* Remove centering transform */
-    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
-    border: 2px solid rgba(0, 0, 0, 0.2);
+    width: 80%;
+    height: 85%;
+    top: 5%;
+    left: 10%;
+    transform: none;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid #5167b1;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     z-index: 20;
-    overflow-y: auto;
 }
 
-/* #resume-window .window-bar {
-    height: 30px;
-    background-color: rgba(45, 45, 45, 0.9);
-    border-radius: 10px 10px 0 0;
+#resume-window.visible {
+    display: flex;
+    flex-direction: column;
 }
-
-#resume-window iframe {
-    width: 100%;
-    height: calc(100% - 30px);
-    border: none;
-} */
 
 
 /* Download Button */
 .download-button-container {
     text-align: center; /* Center the button */
-    margin: 10px 0; /* Add spacing above and below */
+    margin: 10px 0;
+    height: 40px; /* Add spacing above and below */
 }
 
 .download-button {
     display: inline-block;
     background-color: #5a6781; /* Matches the bottom bar */
     color: #fff;
-    padding: 8px 16px;
+    padding: 4px 16px;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
@@ -489,3 +483,10 @@ body::before {
     background-color: #8c74b5; /* Lighter color on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
+
+/* Larger window size for projects */
+#project-window {
+    width: 72%; /* Increased from 66% */
+    height: 72%; /* Increased from 66% */
+}
+

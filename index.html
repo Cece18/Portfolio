@@ -141,15 +141,20 @@
     </div>
     <div class="window" id="resume-window">
         <div class="window-bar">
+            <div class="window-title">
+                <img src="images/file.png" alt="Resume Icon" class="window-icon">
+                <span>Resume</span>
+            </div>
             <div class="buttons">
                 <div class="button close" onclick="closeWindow('resume')">X</div>
-                
             </div>
         </div>
-        <div class="download-button-container">
-        <a href="documents/resume.pdf" download class="download-button">Download Resume</a>
-    </div>
-    <iframe src="documents/Charlene_Noye_Resume.pdf" class="window-content" style="width: 100%; height: calc(100% - 40px); overflow-y: scroll;"></iframe>
+        <div class="window-content">
+            <div class="download-button-container">
+                <a href="documents/resume.pdf" download class="download-button">Download Resume</a>
+            </div>
+            <iframe src="documents/Charlene_Noye.pdf" style="width: 100%; height: calc(100% - 50px); border: none;"></iframe>
+        </div>
     </div>
 
     <script src="js/scripts.js"></script> <!-- Main logic for opening folders -->
@@ -157,3 +162,4 @@
     <script src="js/text.js"></script>
 </body>
 </html>
+

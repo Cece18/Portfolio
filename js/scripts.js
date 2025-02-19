@@ -57,6 +57,7 @@ function openWindow(app) {
     if (windowElement) {
         // Show the window using the new visible class
         windowElement.classList.add("visible");
+        windowElement.style.display = 'flex';
 
         // Create app indicator only if it doesn't exist
         if (!document.getElementById(`${app}-indicator`)) {
@@ -86,8 +87,8 @@ function closeWindow(app) {
     const appIndicator = document.getElementById(`${app}-indicator`);
 
     if (windowElement) {
-        // Remove the visible class instead of setting display none
         windowElement.classList.remove("visible");
+        windowElement.style.display = 'none';
     }
     
     if (appIndicator) {
@@ -103,6 +104,7 @@ function restoreWindow(app) {
     const windowElement = document.getElementById(`${app}-window`);
     if (windowElement) {
         windowElement.classList.add("visible");
+        windowElement.style.display = 'flex';
     }
 }
 
