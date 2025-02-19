@@ -12,7 +12,7 @@
 
 
     <!-- Top Bar -->
-
+    <div class="desktop-container">
     <div class="top-bar">
         <div class="left">
             <span>Charlene</span>
@@ -29,25 +29,25 @@
     <!-- Main Desktop -->
 
 
-    <div class="desktop" ondblclick="clearHighlight()">
-        <div class="icon" onclick="highlightFolder(this)" ondblclick="openWindow('skills')">
+    <div class="desktop">
+        <div class="icon" ondblclick="openWindow('skills')">
             <img src="images/music.png" alt="Experience Icon">
             <p>Skills</p>
         </div>
-        <div class="icon" onclick="highlightFolder(this)" ondblclick="openWindow('experience')">
+        <div class="icon" ondblclick="openWindow('experience')">
             <img src="images/image.png" alt="Experience Icon">
             <p>Experience</p>
         </div>
-        <div class="icon"  onclick="highlightFolder(this)" ondblclick="openWindow('education')">
+        <div class="icon"  ondblclick="openWindow('education')">
             <img src="images/folder.png" alt="Education Icon">
             <p>Education</p>
         </div>
-        <div class="icon"  onclick="highlightFolder(this)" ondblclick="openWindow('project')">
+        <div class="icon"  ondblclick="openWindow('project')">
             <img src="images/favourite.png" alt="GitHub Icon">
             <p>Projects</p>
         </div>
 
-        <div class="icon"  onclick="highlightFolder(this)" ondblclick="openWindow('resume')">
+        <div class="icon"   ondblclick="openWindow('resume')">
             <img src="images/file.png" alt="Resume Icon">
             <p>Resume.pdf</p>
         </div>
@@ -78,57 +78,50 @@
         </div>
         <div class="menu" id="menu">
             <ul>
-                <li onclick="restart()">Restart</li>
                 <li onclick="shutdown()">Shut Down</li>
                 <li onclick="sleep()">Sleep</li>
             </ul>
         </div>
         <div class="open-apps" id="open-apps"></div>
     </div>
+</div>
 
 
     <!-- Opening Window-->
 
     <div class="window" id="skills-window">
         <div class="window-bar">
+            <div class="window-title">
+                <img src="images/music.png" alt="Skills Icon" class="window-icon">
+                <span>Skills</span>
+            </div>
             <div class="buttons">
-                <div class="button close" onclick="closeWindow('skills')"></div>
-                <div class="button minimize" onclick="minimizeWindow('skills-window')"></div>
-                <div class="button maximize" onclick="maximizeWindow('skills-window')"></div>
-                
+                <div class="button close" onclick="closeWindow('skills')">X</div>
             </div>
         </div>
         <iframe src="skills.html" class="window-content"></iframe>
     </div>
     <div class="window" id="experience-window">
         <div class="window-bar">
+            <div class="window-title">
+                <img src="images/image.png" alt="Experience Icon" class="window-icon">
+                <span>Experience</span>
+            </div>
             <div class="buttons">
-                <div class="button close" onclick="closeWindow('experience')"></div>
-                <div class="button minimize" onclick="minimizeWindow('experience-window')"></div>
-                <div class="button maximize" onclick="maximizeWindow('experience-window')"></div>
-                
+                <div class="button close" onclick="closeWindow('experience')">X</div>
             </div>
         </div>
         <iframe src="experience.html" class="window-content"></iframe>
     </div>
-
-    <div class="window" id="github-window">
-        <div class="window-bar">
-            <div class="buttons">
-                <div class="button close" onclick="closeWindow('github')"></div>
-                <div class="button minimize" onclick="minimizeWindow('github-window')"></div>
-                <div class="button maximize" onclick="maximizeWindow('github-window')"></div>
-            </div>
-        </div>
-        <iframe src="github.html" class="window-content"></iframe>
-    </div>
     
     <div class="window" id="education-window">
         <div class="window-bar">
+            <div class="window-title">
+                <img src="images/folder.png" alt="Education Icon" class="window-icon">
+                <span>Education</span>
+            </div>
             <div class="buttons">
-                <div class="button close" onclick="closeWindow('education')"></div>
-                <div class="button minimize" onclick="minimizeWindow('education-window')"></div>
-                <div class="button maximize" onclick="maximizeWindow('education-window')"></div>
+                <div class="button close" onclick="closeWindow('education')">X</div>
             </div>
         </div>
         <iframe src="education.html" class="window-content"></iframe>
@@ -136,10 +129,12 @@
 
     <div class="window" id="project-window">
         <div class="window-bar">
+            <div class="window-title">
+                <img src="images/favourite.png" alt="Projects Icon" class="window-icon">
+                <span>Projects</span>
+            </div>
             <div class="buttons">
-                <div class="button close" onclick="closeWindow('project')"></div>
-                <div class="button minimize" onclick="minimizeWindow('project-window')"></div>
-                <div class="button maximize" onclick="maximizeWindow('project-window')"></div>
+                <div class="button close" onclick="closeWindow('project')">X</div>
             </div>
         </div>
         <iframe src="project.html" class="window-content"></iframe>
@@ -147,15 +142,14 @@
     <div class="window" id="resume-window">
         <div class="window-bar">
             <div class="buttons">
-                <div class="button close" onclick="closeWindow('resume')"></div>
-                <div class="button minimize" onclick="minimizeWindow('resume-window')"></div>
-                <div class="button maximize" onclick="maximizeWindow('resume-window')"></div>
+                <div class="button close" onclick="closeWindow('resume')">X</div>
+                
             </div>
         </div>
         <div class="download-button-container">
         <a href="documents/resume.pdf" download class="download-button">Download Resume</a>
     </div>
-    <iframe src="documents/resume.pdf#zoom=150" class="window-content" style="width: 100%; height: calc(100% - 40px); overflow-y: scroll;"></iframe>
+    <iframe src="documents/Charlene_Noye_Resume.pdf" class="window-content" style="width: 100%; height: calc(100% - 40px); overflow-y: scroll;"></iframe>
     </div>
 
     <script src="js/scripts.js"></script> <!-- Main logic for opening folders -->

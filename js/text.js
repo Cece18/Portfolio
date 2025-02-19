@@ -12,3 +12,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Typed.js on the span with the class `multiple-text`
     new Typed(".multiple-text", options);
 });
+
