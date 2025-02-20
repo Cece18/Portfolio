@@ -1,8 +1,11 @@
-
-// Initialize the type animation for the About Me widget
 document.addEventListener("DOMContentLoaded", () => {
     const options = {
-        strings: ["A Software Engineer", "A Problem Solver", "An Innovator"], // Add any phrases you'd like
+        strings: [
+            "A Software Engineer",
+            "A Problem Solver",
+            "A Tech Enthusiast",
+            "A Creator of Solutions"
+        ], // Describes you without repeating the "Hi, I'm Charlene"
         typeSpeed: 100,
         backSpeed: 50,
         backDelay: 1000,
@@ -12,4 +15,3 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Typed.js on the span with the class `multiple-text`
     new Typed(".multiple-text", options);
 });
-

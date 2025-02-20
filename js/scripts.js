@@ -1,3 +1,16 @@
+const options = {
+    strings: [
+        "A Software Engineer",
+        "A Problem Solver",
+        "A Tech Enthusiast",
+        "A Creator of Solutions"
+    ], // Describes you without repeating the "Hi, I'm Charlene"
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 1000,
+    loop: true, // Loops the animation
+};
+
 function updateTime() {
     const timeElement = document.getElementById("time");
     const now = new Date();
@@ -43,6 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Remove 'highlighted' class from all icons
         icons.forEach(i => i.classList.remove('highlighted'));
     });
+
+    const typed = new Typed('.multiple-text', options);
+
+
 });
 
 
@@ -64,17 +81,9 @@ function openWindow(app) {
             const appIndicator = document.createElement("div");
             appIndicator.id = `${app}-indicator`;
             appIndicator.classList.add("app-indicator");
-
-            const appIcon = document.createElement("img");
-            appIcon.src = clickedFolder ? clickedFolder.src : `images/default-icon.png`;
-            appIcon.alt = `${app} Icon`;
-            appIcon.classList.add("app-indicator-icon");
-
-            const appName = document.createElement("span");
-            appName.textContent = app.charAt(0).toUpperCase() + app.slice(1);
-
-            appIndicator.appendChild(appIcon);
-            appIndicator.appendChild(appName);
+            
+            // Create and set the text directly
+            appIndicator.textContent = app.charAt(0).toUpperCase() + app.slice(1);
             appIndicator.onclick = () => restoreWindow(app);
 
             openAppsBar.appendChild(appIndicator);
