@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Charlene's Portfolio</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to bottom, #b2d7ff, #d8b2ff);
+            color: #2B2B2B;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 320px;
+            border: 2px solid #5167b1;
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 3px solid #5167b1;
+            padding: 3px;
+            box-shadow: 0 0 20px rgba(81, 103, 177, 0.2);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: #4A90E2;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        input {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #5167b1;
+            border-radius: 8px;
+            font-size: 1rem;
+            text-align: center;
+            color: #2B2B2B;
+            font-family: 'Quicksand', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #8c74b5;
+            box-shadow: 0 0 10px rgba(81, 103, 177, 0.2);
+        }
+
+        input::placeholder {
+            color: rgba(43, 43, 43, 0.5);
+        }
+
+        button {
+            padding: 1rem;
+            background-color: #5167b1;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Quicksand', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #8c74b5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(81, 103, 177, 0.3);
+        }
+
+        .time {
+            position: absolute;
+            bottom: 2rem;
+            color: #2B2B2B;
+            font-size: 1.2rem;
+            font-weight: 400;
+            z-index: 1;
+        }
+
+        .battery-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 30px;
+            height: auto;
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <img src="assets/icons/battery.png" alt="Battery Icon" class="battery-icon">
+    
+    <div class="login-container">
+        <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-image">
+        <h2>Welcome</h2>
+        <form class="login-form" onsubmit="handleLogin(event)">
+            <input type="text" id="username" placeholder="Click here to enter username">
+            <button type="submit">Enter Portfolio</button>
+        </form>
+    </div>
+
+    <div class="time" id="time"></div>
+
+    <script>
+        // Update time
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+            timeElement.textContent = timeString;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Handle login
+        function handleLogin(event) {
+            event.preventDefault();
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

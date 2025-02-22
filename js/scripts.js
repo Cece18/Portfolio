@@ -122,16 +122,13 @@ function toggleMenu() {
     menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
 
-function restart() {
-    alert("Restarting... (You can customize this action)");
-}
 
 function shutdown() {
-    alert("Shutting down... (You can customize this action)");
+    window.location.href = 'login.html';
 }
 
 function sleep() {
-    alert("Sleeping... (You can customize this action)");
+    window.location.href = 'login.html';
 }
 
 
